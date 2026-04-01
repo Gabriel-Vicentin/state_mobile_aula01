@@ -1,19 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:provider/provider.dart' as provider;
 
-import 'presentation/pages/home_page.dart';
-import 'state/provider/counter_provider.dart';
+import 'presentation/pages/riverpod_page.dart';
 
 void main() {
-  runApp(
-    ProviderScope(
-      child: provider.ChangeNotifierProvider(
-        create: (_) => CounterProvider(),
-        child: const MyApp(),
-      ),
-    ),
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,9 +12,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'State Management Patterns',
-      home: const HomePage(),
+    return ProviderScope(
+      child: MaterialApp(
+        title: 'State Management Patterns',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF1F6FEB),
+          ),
+          useMaterial3: true,
+        ),
+        home: const RiverpodPage(),
+      ),
     );
   }
 }
