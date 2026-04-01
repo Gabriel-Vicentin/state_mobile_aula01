@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'product.dart';
-import 'products_service.dart';
+import '../../models/product.dart';
+import '../../services/product_service.dart';
 
-final productsServiceProvider = Provider<ProductsService>((ref) {
-  return ProductsService();
+final productsServiceProvider = Provider<ProductService>((ref) {
+  return ProductService();
 });
 
 final productsProvider = FutureProvider<List<Product>>((ref) async {

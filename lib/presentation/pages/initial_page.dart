@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'riverpod_page.dart';
+import '../../screens/product_list_screen.dart';
 
-class InitialPage extends StatelessWidget {
-  const InitialPage({super.key});
+class InitialScreen extends StatelessWidget {
+  const InitialScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class InitialPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => const RiverpodPage()),
+                    MaterialPageRoute(builder: (_) => const ProductListScreen()),
                   );
                 },
                 icon: const Icon(Icons.arrow_forward),

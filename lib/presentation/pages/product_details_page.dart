@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../state/riverpod/product.dart';
+import '../../models/product.dart';
 
-class ProductDetailsPage extends StatelessWidget {
-  const ProductDetailsPage({
+class ProductDetailScreen extends StatelessWidget {
+  const ProductDetailScreen({
     super.key,
     required this.product,
   });
